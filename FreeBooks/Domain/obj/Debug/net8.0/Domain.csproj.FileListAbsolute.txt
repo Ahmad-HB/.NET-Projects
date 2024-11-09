@@ -1,0 +1,17 @@
+/Users/ahmad/RiderProjects/FreeBooks/Domain/bin/Debug/net8.0/Domain.deps.json
+/Users/ahmad/RiderProjects/FreeBooks/Domain/bin/Debug/net8.0/Domain.runtimeconfig.json
+/Users/ahmad/RiderProjects/FreeBooks/Domain/bin/Debug/net8.0/Domain.dll
+/Users/ahmad/RiderProjects/FreeBooks/Domain/bin/Debug/net8.0/Domain.pdb
+/Users/ahmad/RiderProjects/FreeBooks/Domain/obj/Debug/net8.0/Domain.csproj.AssemblyReference.cache
+/Users/ahmad/RiderProjects/FreeBooks/Domain/obj/Debug/net8.0/Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ahmad/RiderProjects/FreeBooks/Domain/obj/Debug/net8.0/Domain.AssemblyInfoInputs.cache
+/Users/ahmad/RiderProjects/FreeBooks/Domain/obj/Debug/net8.0/Domain.AssemblyInfo.cs
+/Users/ahmad/RiderProjects/FreeBooks/Domain/obj/Debug/net8.0/Domain.csproj.CoreCompileInputs.cache
+/Users/ahmad/RiderProjects/FreeBooks/Domain/obj/Debug/net8.0/Domain.dll
+/Users/ahmad/RiderProjects/FreeBooks/Domain/obj/Debug/net8.0/refint/Domain.dll
+/Users/ahmad/RiderProjects/FreeBooks/Domain/obj/Debug/net8.0/Domain.pdb
+/Users/ahmad/RiderProjects/FreeBooks/Domain/obj/Debug/net8.0/Domain.genruntimeconfig.cache
+/Users/ahmad/RiderProjects/FreeBooks/Domain/obj/Debug/net8.0/ref/Domain.dll
+/Users/ahmad/RiderProjects/FreeBooks/Domain/obj/Debug/net8.0/Domain.csproj.GenerateResource.cache
+/Users/ahmad/RiderProjects/FreeBooks/Domain/obj/Debug/net8.0/Domain.Resource.Resources.resources
+/Users/ahmad/RiderProjects/FreeBooks/Domain/obj/Debug/net8.0/Domain.sourcelink.json

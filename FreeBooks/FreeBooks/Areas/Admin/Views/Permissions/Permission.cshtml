@@ -1,0 +1,59 @@
+@model PermissionViewModel
+
+@{
+    ViewBag.Title = "Permissions";
+    Layout = "_LayoutAdmin";
+}
+<h1>@Resources.lbManagePermission (@Model.RoleName)</h1>
+<br/>
+<div class="card">
+    <div id="viewAll" class="card-body table-responsive">
+        <form asp-controller="Permissions" method="post" asp-action="Update" class="d-inline">
+            <input asp-for="@Model.RoleId" type="hidden"/>
+            <table class="table table-striped" id="permissionTable">
+                <thead>
+                <tr>
+                    <th>
+                        Type
+                    </th>
+                    <th>
+                        Permission
+                    </th>
+                    <th>
+                        Status
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var item in @Enum.GetValues(typeof(Helper.PermissionModuleName)))
+                {
+                    <tr>
+                        <td>@item</td>
+                        @for (int i = 0; i < Model.RoleClaims.Count(); i++)
+                        {
+                            @if (Model.RoleClaims[i].value.Split('.')[1] == item.ToString())
+                            {
+                                <td>
+                                    <input asp-for="@Model.RoleClaims[i].value" type="hidden"/>
+                                    @Model.RoleClaims[i].value.Split('.')[2]
+                                </td>
+                                <td>
+                                    <div class="form-check m-1">
+                                        <input asp-for="@Model.RoleClaims[i].selected" class="form-check-input"/>
+                                    </div>
+                                </td>
+                            }
+                        }
+                    </tr>
+                }
+                </tbody>
+            </table>
+            <div class="col-sm-12" style="padding: 20px 20px 0px 0px">
+                <button type="submit" id="save" class="btn btn-success">
+                    <i class="fa fa-check"></i>
+                    Save
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

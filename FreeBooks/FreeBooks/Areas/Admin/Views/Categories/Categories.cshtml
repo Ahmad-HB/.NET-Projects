@@ -1,0 +1,227 @@
+@model CategoryViewModel
+
+@{
+    ViewData["Title"] = "Categories";
+    Layout = "_LayoutAdmin";
+}
+<style>
+    /* Style the tab */
+    .tab {
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+    }
+
+    /* Style the buttons that are used to open the tab content */
+    .tab button {
+        background-color: inherit;
+        float: right;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+    }
+
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+        background-color: #ddd;
+    }
+
+    /* Create an active/current tablink class */
+    .tab button.active {
+        background-color: #ccc;
+    }
+
+    /* Style the tab content */
+    .tabcontent {
+        display: none;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-top: none;
+    }
+</style>
+
+<div class="wrapper">
+    <!--Content-Header-->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0 text-dark">@Resources.lbCategories</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item">
+                            <a href="/Admin/Home/Index">@Resources.lbHomePage</a>
+                        </li>
+                        <li class="breadcrumb-item active">@Resources.lbManageBook</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">@Resources.lbCategories</h3>
+                        <div class="card-tools">
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-outline-info rounded-pill" data-toggle="modal" data-target="#exampleModal" onclick="Reset()">
+                                @Resources.lbbtnSaveNewCategory
+                            </button>
+                        </div>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table id="tableCategory" class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <td>@Resources.lbNameCategory</td>
+                                <td>@Resources.lbDescription</td>
+                                <td>@Resources.lbEvents</td>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach (var item in Model.Categories)
+                            {
+                                <tr>
+                                    <td>
+                                        @item.Name
+                                    </td>
+                                    <td>
+                                        @item.Description
+                                    </td>
+                                    <td>
+                                        <input type="button" class="btn btn-info btn-sm" onclick="Edit('@item.Id','@item.Name','@item.Description')" value="@Resources.lbbtnEdit" data-toggle="modal" data-target="#exampleModal"/>
+                                        |
+                                        <input type="button" class="btn btn-danger btn-sm" onclick="Delete('@item.Id')" value="@Resources.lbbtnDelete"/>
+                                    </td>
+                                </tr>
+                            }
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+</div>
+
+<!-- Modal -->
+
+@* <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"> *@
+@*     <div class="modal-dialog card card-success card-outline"> *@
+@*         <div class="modal-content"> *@
+@*             <div class="modal-header"> *@
+@*                 <h5 class="modal-title" id="title">@Resources.lbbtnSaveNewRole</h5> *@
+@*                 <a href="#" class="btn-close" data-bs-dismiss="modal" aria-label="Close">x</a> *@
+@*             </div> *@
+@*             <div class="modal-body"> *@
+@*                 <form asp-action="Save" asp-controller="Categories" method="post"> *@
+@*                     <input type="text" hidden class="form-control" asp-for="NewCategory.Id" id="categoryId"/> *@
+@*                     <div class="form-group"> *@
+@*                         <label asp-for="NewCategory.Name" class="control-lable">@Resources.lbNameCategory</label> *@
+@*                         <input type="text" class="form-control" asp-for="NewCategory.Name" id="categoryName"/> *@
+@*                         <span asp-validation-for="NewCategory.Name" class="text-danger"></span> *@
+@*                     </div> *@
+@*                     <div class="form-group"> *@
+@*                         <label asp-for="NewCategory.Description" class="control-lable">@Resources.lbDescription</label> *@
+@*                         <input type="text" class="form-control" asp-for="NewCategory.Description" id="description"/> *@
+@*                         <span asp-validation-for="NewCategory.Description" class="text-danger"></span> *@
+@*                     </div> *@
+@* *@
+@*                     <div class="modal-footer-rtl" style="padding:0 15px 15px 0"> *@
+@*                         <input type="submit" class="btn btn-success" value="@Resources.lbbtnSave" id="btnSave"/> *@
+@*                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> *@
+@*                     </div> *@
+@*                 </form> *@
+@*             </div> *@
+@*         </div> *@
+@*     </div> *@
+@* </div> *@
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="title">@Resources.lbbtnSaveNewCategory</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form asp-action="SaveCategories" asp-controller="Categories" method="post">
+                <input type="text" hidden="hidden" class="form-control" asp-for="NewCategory.Id" id="categoryId"/>
+                    <div class="form-group">
+                        <label asp-for="NewCategory.Name" class="control-label">@Resources.lbNameCategory</label>
+                        <input type="text" class="form-control" asp-for="NewCategory.Name" id="CategoryName"/>
+                        <span asp-validation-for="NewCategory.Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="NewCategory.Description" class="control-label">@Resources.lbDescription</label>
+                        <input type="text" class="form-control" asp-for="NewCategory.Description" id="description"/>
+                        <span asp-validation-for="NewCategory.Description" class="text-danger"></span>
+                    </div>
+
+                    <div class="modal-footer-rtl">
+                        <input type="submit" class="btn btn-success" value="@Resources.lbbtnSave" id="btnSave"/>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section Script
+{
+    @if (!string.IsNullOrEmpty(Context.Session.GetString("msgType")))
+    {
+        if (Context.Session.GetString("msgType") == "success")
+        {
+            <script>
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: @Context.Session.GetString("title"),
+                    text: @Html.Raw(Context.Session.GetString("msg"))
+                    confirmButton: "ok",
+                    timer: 1500
+                });
+            </script>
+        }
+        else
+        {
+            <script>
+                Swal.fire({
+                    icon: "error",
+                    title: @Context.Session.GetString("title"),
+                    text: @Html.Raw(Context.Session.GetString("msg")),
+                    confirmButton: "ok",
+                    timer: 1500
+                });
+            </script>
+        }
+
+        Context.Session.SetString("msgType", "");
+    }
+
+    <script src="~/Models/Categories.js"></script>
+
+
+}

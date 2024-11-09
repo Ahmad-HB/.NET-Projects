@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+        <xsd:element name="root" msdata:IsDataSet="true">
+            <xsd:complexType>
+                <xsd:choice maxOccurs="unbounded">
+                    <xsd:element name="metadata">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                            </xsd:sequence>
+                            <xsd:attribute name="name" use="required" type="xsd:string"/>
+                            <xsd:attribute name="type" type="xsd:string"/>
+                            <xsd:attribute name="mimetype" type="xsd:string"/>
+                            <xsd:attribute ref="xml:space"/>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="assembly">
+                        <xsd:complexType>
+                            <xsd:attribute name="alias" type="xsd:string"/>
+                            <xsd:attribute name="name" type="xsd:string"/>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="data">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                            </xsd:sequence>
+                            <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+                            <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+                            <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+                            <xsd:attribute ref="xml:space"/>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="resheader">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                            </xsd:sequence>
+                            <xsd:attribute name="name" type="xsd:string" use="required"/>
+                        </xsd:complexType>
+                    </xsd:element>
+                </xsd:choice>
+            </xsd:complexType>
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        </value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        </value>
+    </resheader>
+    <data name="lbActionName" xml:space="preserve">
+    <value>اسم العملية</value>
+  </data>
+    <data name="lbActiveUser" xml:space="preserve">
+    <value>تفعيل المستخدم</value>
+  </data>
+    <data name="lbAddNewCategory" xml:space="preserve">
+    <value>اضف مجموعة فئات جديدة</value>
+  </data>
+    <data name="lbAddNewRole" xml:space="preserve">
+    <value>اضف مجموعة جديدة</value>
+  </data>
+    <data name="lbbtnChangePassword" xml:space="preserve">
+    <value>تغير كلمة المرور</value>
+  </data>
+    <data name="lbbtnDelete" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+    <data name="lbbtnEdit" xml:space="preserve">
+    <value>تعديل</value>
+  </data>
+    <data name="lbbtnPermissions" xml:space="preserve">
+    <value>الصلحيات</value>
+  </data>
+    <data name="lbbtnSave" xml:space="preserve">
+    <value>حفظ</value>
+  </data>
+    <data name="lbbtnSaveNewCategory" xml:space="preserve">
+    <value>اضف فئة جديدة</value>
+  </data>
+    <data name="lbbtnSaveNewRole" xml:space="preserve">
+    <value>اضف مجموعة جديدة</value>
+  </data>
+    <data name="lbbtnSaveNewUser" xml:space="preserve">
+    <value>اضافة مستخدم جديد</value>
+  </data>
+    <data name="lbcancelButtonText" xml:space="preserve">
+    <value>الغاء</value>
+  </data>
+    <data name="lbCategories" xml:space="preserve">
+    <value>مجموعة الفئات</value>
+  </data>
+    <data name="lbComparePassword" xml:space="preserve">
+    <value>اعد كلمة المرور</value>
+  </data>
+    <data name="lbconfirmButtonText" xml:space="preserve">
+    <value>نعم ، احذفها</value>
+  </data>
+    <data name="lbDate" xml:space="preserve">
+    <value>التاريخ</value>
+  </data>
+    <data name="lbDescription" xml:space="preserve">
+    <value>وصف الفئة</value>
+  </data>
+    <data name="lbEdit" xml:space="preserve">
+    <value>تعديل</value>
+  </data>
+    <data name="lbEmailUser" xml:space="preserve">
+    <value>البريد الالكترونى</value>
+  </data>
+    <data name="lbEvents" xml:space="preserve">
+    <value>الاحداث</value>
+  </data>
+    <data name="lbHomePage" xml:space="preserve">
+    <value>الصفحة الرئيسية</value>
+  </data>
+    <data name="lbImageUser" xml:space="preserve">
+    <value>صورة المستخدم</value>
+  </data>
+    <data name="lbLogCategories" xml:space="preserve">
+    <value>عمليات الفئات</value>
+  </data>
+    <data name="lbManageBook" xml:space="preserve">
+    <value>ادارة الكتب</value>
+  </data>
+    <data name="lbManagePermission" xml:space="preserve">
+    <value>إدارة الصلحيات لل</value>
+  </data>
+    <data name="lbMsgDeletedOkCategory" xml:space="preserve">
+    <value>تم حذف مجموع الفئات</value>
+  </data>
+    <data name="lbMsgDeletedOkRegister" xml:space="preserve">
+    <value>تم حذف مجموعة المستخدم.</value>
+  </data>
+    <data name="lbMsgDeletedOkRole" xml:space="preserve">
+    <value>تم حذف مجموعة المستخدم.</value>
+  </data>
+    <data name="lbMsgDenied" xml:space="preserve">
+    <value>ليس لديك صلاحية لهذه الصفحة</value>
+  </data>
+    <data name="lbMsgDuplicateNameCategory" xml:space="preserve">
+    <value>لايستطيع الحفظ لان اسم الفئة موجود</value>
+  </data>
+    <data name="lbMsgErrorLogin" xml:space="preserve">
+    <value>البريد الالكترونى او كلمة المرور غير صحيح</value>
+  </data>
+    <data name="lbMsgNotSavedCategory" xml:space="preserve">
+    <value>لم يتم حفظ الفئة</value>
+  </data>
+    <data name="lbMsgNotSavedChangePassword" xml:space="preserve">
+    <value>لم يتم تغير كلمة المرور</value>
+  </data>
+    <data name="lbMsgNotUpdatedCategory" xml:space="preserve">
+    <value>لميتم اعديل الفئة</value>
+  </data>
+    <data name="lbMsgSaveCategory" xml:space="preserve">
+    <value>تم حفظ فئة جديدة</value>
+  </data>
+    <data name="lbMsgSavedChangePassword" xml:space="preserve">
+    <value>تم تغير كلمة المرور بنجاح</value>
+  </data>
+    <data name="lbMsgUpdateCategory" xml:space="preserve">
+    <value>تم تعديل الفئة بنجاح</value>
+  </data>
+    <data name="lbNameCategory" xml:space="preserve">
+    <value>اسم الفئة</value>
+  </data>
+    <data name="lbNameRole" xml:space="preserve">
+    <value>اسم المجموعة</value>
+  </data>
+    <data name="lbNameUser" xml:space="preserve">
+    <value>اسم المستخدم</value>
+  </data>
+    <data name="lbNotSaved" xml:space="preserve">
+    <value>لم يتم الحفظ</value>
+  </data>
+    <data name="lbNotSavedMsgRole" xml:space="preserve">
+    <value>لم يتم حفظ مجموعة المستخدم</value>
+  </data>
+    <data name="lbNotSavedMsgUser" xml:space="preserve">
+    <value>لم يتم حفظ المستخدم</value>
+  </data>
+    <data name="lbNotSavedMsgUserRole" xml:space="preserve">
+    <value>لم يتم حفظ مجموعة المستخدم</value>
+  </data>
+    <data name="lbNotUpdate" xml:space="preserve">
+    <value>لم يتم التعديل</value>
+  </data>
+    <data name="lbNotUpdateMsgRole" xml:space="preserve">
+    <value>لم يتم تعديل مجموعة المستخدم</value>
+  </data>
+    <data name="lbNotUpdateMsgUser" xml:space="preserve">
+    <value>لم يتم تعديل المستخدم</value>
+  </data>
+    <data name="lbNotUpdateMsgUserRole" xml:space="preserve">
+    <value>لم يتم تعديل مجموعة المستخدم</value>
+  </data>
+    <data name="lbOk" xml:space="preserve">
+    <value>حسناً</value>
+  </data>
+    <data name="lbPassword" xml:space="preserve">
+    <value>كلمة المرور</value>
+  </data>
+    <data name="lbRegisters" xml:space="preserve">
+    <value>المستخدمين</value>
+  </data>
+    <data name="lbRoles" xml:space="preserve">
+    <value>مجموعة المستخدمين</value>
+  </data>
+    <data name="lbRoleUser" xml:space="preserve">
+    <value>مجموعة المستخدمين</value>
+  </data>
+    <data name="lbSave" xml:space="preserve">
+    <value>تم الحفظ</value>
+  </data>
+    <data name="lbSaveMsgRole" xml:space="preserve">
+    <value>تم حفظ مجموعة المستخدم بنجاح</value>
+  </data>
+    <data name="lbSaveMsgUser" xml:space="preserve">
+    <value>تم حفظ مستخدم جديد بنجاح</value>
+  </data>
+    <data name="lbSelectUserRole" xml:space="preserve">
+    <value>اختر مجموعة المستخدم</value>
+  </data>
+    <data name="lbTextMsgDelete" xml:space="preserve">
+    <value>لن تتمكن من التراجع عن هذا!!</value>
+  </data>
+    <data name="lbTitleDeletedOk" xml:space="preserve">
+    <value>تم الحذف!</value>
+  </data>
+    <data name="lbTitleEdit" xml:space="preserve">
+    <value>تعديل مجموعة المستخدم</value>
+  </data>
+    <data name="lbTitleEditCategory" xml:space="preserve">
+    <value>تعديل مجموعة الفئات</value>
+  </data>
+    <data name="lbTitleMsgDelete" xml:space="preserve">
+    <value>هل انتا متأكد ؟</value>
+  </data>
+    <data name="lbUpdate" xml:space="preserve">
+    <value>تم التعديل</value>
+  </data>
+    <data name="lbUpdateMsgRole" xml:space="preserve">
+    <value>تم تعديل مجموعة المستخدم بنجاح</value>
+  </data>
+    <data name="lbUpdateMsgUser" xml:space="preserve">
+    <value>تم تعديل المستخدم بنجاح</value>
+  </data>
+    <data name="lbUser" xml:space="preserve">
+    <value>المستخدمين الحالين</value>
+  </data>
+    <data name="lbUserName" xml:space="preserve">
+    <value>المستخدم</value>
+  </data>
+  <data name="lbLogout" xml:space="preserve">
+    <value>تسجيل الخروج</value>
+  </data>
+</root>

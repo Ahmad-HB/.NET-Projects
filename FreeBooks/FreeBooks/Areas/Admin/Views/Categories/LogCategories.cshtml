@@ -1,0 +1,191 @@
+@model CategoryViewModel
+@inject UserManager<ApplicationUser> userManager
+
+@{
+    ViewData["Title"] = "LogCategories";
+    Layout = "_LayoutAdmin";
+}
+
+
+<div class="wrapper">
+    <!--Content-Header-->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0 text-dark">@Resources.lbLogCategories</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item">
+                            <a href="/Admin/Home/Index">@Resources.lbHomePage</a>
+                        </li>
+                        <li class="breadcrumb-item active">@Resources.lbManageBook</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">@Resources.lbLogCategories</h3>
+                        <div class="card-tools">
+                            <!-- Button trigger modal -->
+                            @* <button type="button" class="btn btn-outline-info rounded-pill" data-toggle="modal" data-target="#exampleModal" onclick="Reset()"> *@
+                            @*     @Resources.lbbtnSaveNewCategory *@
+                            @* </button> *@
+                        </div>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table id="tableLogCategory" class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <td>#</td>
+                                <td>@Resources.lbNameCategory</td>
+                                <td>@Resources.lbActionName</td>
+                                <td>@Resources.lbDate</td>
+                                <td>@Resources.lbUserName</td>
+                                <td>@Resources.lbEvents</td>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach (var item in Model.LogCategories)
+                            {
+                                <tr>
+                                    <td>#</td>
+                                    <td>@item.Category.Name</td>
+                                    <td>
+                                        @switch (@item.Action)
+                                        {
+                                            case "Save":
+                                                <span class="badge badge-success" style="width:150px; height:25px">@item.Action</span>
+                                                break;
+                                            case "Update":
+                                                <span class="badge badge-warning" style="width:150px; height:25px">@item.Action</span>
+                                                break;
+                                            default:
+                                                <span class="badge badge-danger" style="width:150px; height:25px">@item.Action</span>
+                                                break;
+                                        }
+                                    </td>
+                                    <td>@item.Date</td>
+                                    <td>@userManager.FindByIdAsync(item.UserId.ToString()).Result?.Name</td>
+
+                                    <td>
+                                        <input type="button" class="btn btn-danger btn-sm" onclick="DeleteLog('@item.Id')" value="@Resources.lbbtnDelete"/>
+                                    </td>
+                                </tr>
+                            }
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+</div>
+
+<!-- Modal -->
+@* <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"> *@
+@*     <div class="modal-dialog" role="document"> *@
+@*         <div class="modal-content"> *@
+@*             <div class="modal-header"> *@
+@*                 <h5 class="modal-title" id="title">@Resources.lbbtnSaveNewCategory</h5> *@
+@*                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"> *@
+@*                     <span aria-hidden="true">&times;</span> *@
+@*                 </button> *@
+@*             </div> *@
+@*             <div class="modal-body"> *@
+@*                 <input type="text" hidden="hidden" class="form-control" asp-for="NewCategory.Id" id="categoryId"/> *@
+@*                 <form asp-action="SaveCategories" asp-controller="Categories" method="post"> *@
+@*                     <div class="form-group"> *@
+@*                         <label asp-for="NewCategory.Name" class="control-label">@Resources.lbNameCategory</label> *@
+@*                         <input type="text" class="form-control" asp-for="NewCategory.Name" id="CategoryName"/> *@
+@*                         <span asp-validation-for="NewCategory.Name" class="text-danger"></span> *@
+@*                     </div> *@
+@*                     <div class="form-group"> *@
+@*                         <label asp-for="NewCategory.Description" class="control-label">@Resources.lbDescription</label> *@
+@*                         <input type="text" class="form-control" asp-for="NewCategory.Description" id="description"/> *@
+@*                         <span asp-validation-for="NewCategory.Description" class="text-danger"></span> *@
+@*                     </div> *@
+@* *@
+@*                     <div class="modal-footer-rtl"> *@
+@*                         <input type="submit" class="btn btn-success" value="@Resources.lbbtnSave" id="btnSave"/> *@
+@*                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> *@
+@*                     </div> *@
+@*                 </form> *@
+@*             </div> *@
+@* *@
+@*         </div> *@
+@*     </div> *@
+@* </div> *@
+
+@section Script
+{
+    @if (!string.IsNullOrEmpty(Context.Session.GetString("msgType")))
+    {
+        if (Context.Session.GetString("msgType") == "success")
+        {
+            <script>
+    Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: @Context.Session.GetString("title"),
+        text: @Html.Raw(Context.Session.GetString("msg"))
+        confirmButton: "ok",
+        timer: 1500
+    });
+</script>
+        }
+        else
+        {
+            <script>
+    Swal.fire({
+        icon: "error",
+        title: @Context.Session.GetString("title"),
+        text: @Html.Raw(Context.Session.GetString("msg")),
+        confirmButton: "ok",
+        timer: 1500
+    });
+</script>
+        }
+
+        Context.Session.SetString("msgType", "");
+    }
+
+    <script src="~/Models/Categories.js"></script>
+
+    <script>
+
+    let lbTitleEditCategory = '@Html.Raw(Resources.lbTitleEditCategory)';
+    let lbEdit = '@Html.Raw(Resources.lbEdit)';
+    let lbAddNewCategory = '@Html.Raw(Resources.lbAddNewCategory)';
+    let lbbtnSave = '@Html.Raw(Resources.lbbtnSave)';
+
+    let lbTitleMsgDelete = '@Html.Raw(Resources.lbbtnSave)';
+    let lbTextMsgDelete = '@Html.Raw(Resources.lbTextMsgDelete)';
+    let lbconfirmButtonText = '@Html.Raw(Resources.lbconfirmButtonText)';
+    let lbcancelButtonText = '@Html.Raw(Resources.lbcancelButtonText)';
+
+    let lbTitleDeletedOk = '@Html.Raw(Resources.lbTitleDeletedOk)';
+    let lbMsgDeletedOkCategory = '@Html.Raw(Resources.lbMsgDeletedOkCategory)';
+    let lbSuccess = '@Html.Raw(Helper.Success)';
+
+</script>
+
+
+}

@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeBooks", "FreeBooks\FreeBooks.csproj", "{03299DDB-920B-439F-BEDC-31BEE929F02C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{0D089F68-813D-45ED-B46A-9B4A46E35C51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{CD518DD5-8B24-4598-9105-AC37AD349D74}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03299DDB-920B-439F-BEDC-31BEE929F02C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03299DDB-920B-439F-BEDC-31BEE929F02C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03299DDB-920B-439F-BEDC-31BEE929F02C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03299DDB-920B-439F-BEDC-31BEE929F02C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D089F68-813D-45ED-B46A-9B4A46E35C51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D089F68-813D-45ED-B46A-9B4A46E35C51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D089F68-813D-45ED-B46A-9B4A46E35C51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D089F68-813D-45ED-B46A-9B4A46E35C51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD518DD5-8B24-4598-9105-AC37AD349D74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD518DD5-8B24-4598-9105-AC37AD349D74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD518DD5-8B24-4598-9105-AC37AD349D74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD518DD5-8B24-4598-9105-AC37AD349D74}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
